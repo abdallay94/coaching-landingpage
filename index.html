@@ -1,0 +1,1645 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- =========================================================
+       BASIC PAGE SETUP
+       ========================================================= -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Abdalla Youssef | Next Chapter Coaching</title>
+
+  <meta name="description" content="Coaching for capable people approaching their late 20s and early 30s who feel stuck, inconsistent, overwhelmed, or unclear about their next chapter. Build structure, self-trust, and consistency with Abdalla Youssef.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* =========================================================
+       DESIGN TOKENS
+       Edit colors, fonts, spacing, and widths here.
+       ========================================================= */
+
+    :root {
+      --bg: #FDFCF9;
+      --sand: #F5F2EC;
+      --sage: #E8EDEB;
+      --sage-strong: #D8E2DD;
+      --green: #2F4039;
+      --green-soft: #3B5249;
+      --green-deep: #26362F;
+      --clay: #B8997D;
+      --ink: #1C1A17;
+      --ink-soft: #3D3A34;
+      --stone: #716A60;
+      --line: rgba(47, 64, 57, 0.18);
+      --white: #FFFFFF;
+
+      --font-heading: "Cormorant Garamond", Georgia, serif;
+      --font-body: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+      --max-width: 1120px;
+      --reading-width: 780px;
+
+      --radius-sm: 6px;
+      --radius-md: 14px;
+      --radius-lg: 22px;
+
+      --shadow-soft: 0 18px 60px rgba(47, 64, 57, 0.08);
+    }
+
+    /* =========================================================
+       RESET AND ACCESSIBILITY
+       ========================================================= */
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--font-body);
+      background: var(--bg);
+      color: var(--ink);
+      font-size: 16px;
+      line-height: 1.7;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    button,
+    input,
+    textarea,
+    select {
+      font: inherit;
+    }
+
+    ::selection {
+      background: var(--sage);
+      color: var(--ink);
+    }
+
+    .skip-link {
+      position: absolute;
+      top: -100px;
+      left: 1rem;
+      z-index: 9999;
+      background: var(--green);
+      color: var(--bg);
+      padding: 0.75rem 1rem;
+      border-radius: var(--radius-sm);
+      text-decoration: none;
+      font-weight: 700;
+    }
+
+    .skip-link:focus {
+      top: 1rem;
+    }
+
+    :focus-visible {
+      outline: 3px solid var(--clay);
+      outline-offset: 4px;
+    }
+
+    /* =========================================================
+       GLOBAL LAYOUT AND TYPOGRAPHY
+       ========================================================= */
+
+    .site-wrapper {
+      overflow-x: hidden;
+    }
+
+    .section {
+      padding: 4.75rem 1.25rem;
+    }
+
+    .container {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .container-narrow {
+      width: 100%;
+      max-width: var(--reading-width);
+      margin: 0 auto;
+    }
+
+    .section-header {
+      max-width: 790px;
+      margin-bottom: 2.5rem;
+    }
+
+    .section-label,
+    .eyebrow {
+      margin: 0 0 1rem;
+      color: var(--green);
+      font-size: 0.74rem;
+      line-height: 1.2;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .section-label {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .section-label::before {
+      content: "";
+      display: inline-block;
+      width: 28px;
+      height: 1px;
+      background: var(--green);
+    }
+
+    h1,
+    h2,
+    h3,
+    p {
+      margin-top: 0;
+    }
+
+    h1,
+    h2,
+    h3 {
+      color: var(--ink);
+      text-wrap: balance;
+    }
+
+    .display-heading {
+      font-family: var(--font-heading);
+      font-weight: 300;
+      font-size: clamp(3rem, 11vw, 5.65rem);
+      line-height: 0.98;
+      letter-spacing: -0.035em;
+      margin-bottom: 1.3rem;
+    }
+
+    .section-heading {
+      font-family: var(--font-heading);
+      font-weight: 300;
+      font-size: clamp(2.25rem, 7.5vw, 3.65rem);
+      line-height: 1.05;
+      letter-spacing: -0.025em;
+      margin-bottom: 1rem;
+    }
+
+    .card-heading {
+      font-family: var(--font-heading);
+      font-weight: 400;
+      font-size: 1.55rem;
+      line-height: 1.15;
+      margin-bottom: 0.7rem;
+    }
+
+    .lead {
+      color: var(--stone);
+      font-size: 1.06rem;
+      line-height: 1.75;
+      max-width: 720px;
+      margin-bottom: 0;
+    }
+
+    .body-copy {
+      color: var(--ink-soft);
+      line-height: 1.75;
+      margin-bottom: 0;
+    }
+
+    .muted-copy {
+      color: var(--stone);
+      line-height: 1.75;
+      margin-bottom: 0;
+    }
+
+    .stack {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .accent-line {
+      border-left: 2px solid var(--green);
+      padding-left: 1rem;
+    }
+
+    /* =========================================================
+       BUTTONS AND CTA PATTERNS
+       ========================================================= */
+
+    .button-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.85rem;
+      align-items: center;
+      margin-top: 2rem;
+    }
+
+    .button {
+      display: inline-flex;
+      min-height: 48px;
+      align-items: center;
+      justify-content: center;
+      padding: 0.92rem 1.45rem;
+      border-radius: var(--radius-sm);
+      font-size: 0.78rem;
+      line-height: 1.2;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      font-weight: 700;
+      text-decoration: none;
+      border: 1px solid transparent;
+      transition:
+        background-color 180ms ease,
+        color 180ms ease,
+        border-color 180ms ease,
+        transform 180ms ease;
+    }
+
+    .button:hover {
+      transform: translateY(-1px);
+    }
+
+    .button-primary {
+      background: var(--green);
+      color: var(--bg);
+      border-color: var(--green);
+    }
+
+    .button-primary:hover {
+      background: var(--ink);
+      border-color: var(--ink);
+    }
+
+    .button-secondary {
+      background: transparent;
+      color: var(--green);
+      border-color: var(--green);
+    }
+
+    .button-secondary:hover {
+      background: var(--sage);
+    }
+
+    .button-light {
+      background: var(--bg);
+      color: var(--green);
+      border-color: var(--bg);
+    }
+
+    .button-light:hover {
+      background: transparent;
+      color: var(--bg);
+    }
+
+    .microcopy {
+      margin: 0.9rem 0 0;
+      color: var(--stone);
+      font-size: 0.92rem;
+      line-height: 1.55;
+      max-width: 560px;
+    }
+
+    /* =========================================================
+       HEADER AND NAVIGATION
+       ========================================================= */
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(253, 252, 249, 0.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(47, 64, 57, 0.12);
+    }
+
+    .nav {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 0.9rem 1.25rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .brand {
+      font-family: var(--font-heading);
+      color: var(--ink);
+      font-size: 1.22rem;
+      line-height: 1;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .nav-links {
+      display: none;
+      align-items: center;
+      gap: 1.15rem;
+    }
+
+    .nav-links a {
+      color: var(--stone);
+      font-size: 0.86rem;
+      text-decoration: none;
+      transition: color 180ms ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--green);
+    }
+
+    .nav-cta {
+      padding: 0.7rem 0.95rem;
+      min-height: 42px;
+      font-size: 0.68rem;
+      white-space: nowrap;
+    }
+
+    /* =========================================================
+       HERO
+       ========================================================= */
+
+    .hero {
+      padding: 4.75rem 1.25rem 4.35rem;
+      background:
+        radial-gradient(circle at 84% 14%, rgba(184, 153, 125, 0.13), transparent 32%),
+        radial-gradient(circle at 8% 86%, rgba(47, 64, 57, 0.08), transparent 32%),
+        var(--bg);
+    }
+
+    .hero-grid {
+      display: grid;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .hero-copy {
+      max-width: 820px;
+    }
+
+    .hero .display-heading strong {
+      color: var(--green);
+      font-weight: 400;
+    }
+
+    .hero-support {
+      margin-top: 1rem;
+      color: var(--ink-soft);
+      max-width: 700px;
+    }
+
+    .credentials-strip {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin-top: 1.5rem;
+    }
+
+    .credential-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      padding: 0.42rem 0.75rem;
+      background: var(--sage);
+      color: var(--green);
+      border: 1px solid rgba(47, 64, 57, 0.16);
+      border-radius: 999px;
+      font-size: 0.78rem;
+      line-height: 1.2;
+      font-weight: 700;
+    }
+
+    .hero-card {
+      position: relative;
+      padding: 1.25rem;
+      border: 1px solid var(--line);
+      background: var(--sand);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-soft);
+    }
+
+    .hero-card-inner {
+      min-height: 300px;
+      border: 1px solid rgba(47, 64, 57, 0.13);
+      padding: 1.5rem;
+      display: grid;
+      align-content: end;
+      background:
+        linear-gradient(135deg, rgba(47, 64, 57, 0.09), transparent 45%),
+        rgba(253, 252, 249, 0.62);
+      border-radius: var(--radius-md);
+    }
+
+    .hero-card-title {
+      margin: 0 0 0.75rem;
+      color: var(--green);
+      font-size: 0.74rem;
+      line-height: 1.2;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+
+    .hero-card-copy {
+      margin: 0;
+      font-family: var(--font-heading);
+      color: var(--ink-soft);
+      font-size: 1.65rem;
+      line-height: 1.18;
+    }
+
+    /* =========================================================
+       WHO IT'S FOR
+       ========================================================= */
+
+    .who {
+      background: var(--sand);
+    }
+
+    .check-grid {
+      display: grid;
+      gap: 0.75rem;
+      margin-top: 2rem;
+    }
+
+    .check-item {
+      display: flex;
+      gap: 0.8rem;
+      align-items: flex-start;
+      padding: 1rem;
+      background: rgba(253, 252, 249, 0.78);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      color: var(--ink-soft);
+    }
+
+    .check-icon {
+      flex: 0 0 auto;
+      width: 1.4rem;
+      height: 1.4rem;
+      border-radius: 999px;
+      background: var(--green);
+      color: var(--bg);
+      display: grid;
+      place-items: center;
+      font-size: 0.75rem;
+      font-weight: 800;
+      margin-top: 0.15rem;
+    }
+
+    .who-close {
+      margin: 2rem 0 0;
+      font-family: var(--font-heading);
+      font-size: 1.3rem;
+      color: var(--ink-soft);
+      line-height: 1.45;
+      max-width: 760px;
+    }
+
+    /* =========================================================
+       PROBLEM
+       ========================================================= */
+
+    .problem {
+      background: var(--bg);
+    }
+
+    .problem-layout {
+      display: grid;
+      gap: 2rem;
+      align-items: start;
+    }
+
+    .problem-card {
+      padding: 1.5rem;
+      background: var(--sage);
+      border: 1px solid rgba(47, 64, 57, 0.16);
+      border-radius: var(--radius-md);
+    }
+
+    .problem-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 0.85rem;
+    }
+
+    .problem-list li {
+      color: var(--ink-soft);
+      display: flex;
+      gap: 0.7rem;
+      line-height: 1.6;
+    }
+
+    .problem-list li::before {
+      content: "";
+      flex: 0 0 auto;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--clay);
+      margin-top: 0.65rem;
+    }
+
+    /* =========================================================
+       WHAT WE WORK ON
+       ========================================================= */
+
+    .work-on {
+      background: var(--sand);
+      padding-top: 3.25rem;
+      padding-bottom: 3.25rem;
+    }
+
+    .topic-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.65rem;
+      margin-top: 1.4rem;
+    }
+
+    .topic-pill {
+      display: inline-flex;
+      padding: 0.55rem 0.85rem;
+      border: 1px solid var(--line);
+      background: rgba(253, 252, 249, 0.78);
+      border-radius: 999px;
+      color: var(--ink-soft);
+      font-size: 0.88rem;
+      line-height: 1.2;
+      font-weight: 600;
+    }
+
+    /* =========================================================
+       WHY THIS APPROACH WORKS
+       ========================================================= */
+
+    .why-works {
+      background: var(--bg);
+    }
+
+    .principle-grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .principle-card {
+      padding: 1.35rem;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: var(--bg);
+    }
+
+    .principle-card.highlight {
+      background: var(--sage);
+      border-color: rgba(47, 64, 57, 0.28);
+    }
+
+    .principle-card p {
+      margin-bottom: 0;
+      color: var(--ink-soft);
+      line-height: 1.7;
+    }
+
+    /* =========================================================
+       APPROACH
+       ========================================================= */
+
+    .approach {
+      background: var(--green);
+      color: var(--bg);
+    }
+
+    .approach h2,
+    .approach h3 {
+      color: var(--bg);
+    }
+
+    .approach .section-label {
+      color: rgba(253, 252, 249, 0.78);
+    }
+
+    .approach .section-label::before {
+      background: rgba(253, 252, 249, 0.65);
+    }
+
+    .approach .lead {
+      color: rgba(253, 252, 249, 0.78);
+    }
+
+    .approach-grid {
+      display: grid;
+      gap: 1rem;
+      margin-top: 2.4rem;
+    }
+
+    .approach-card {
+      padding: 1.4rem;
+      background: rgba(253, 252, 249, 0.08);
+      border: 1px solid rgba(253, 252, 249, 0.18);
+      border-radius: var(--radius-md);
+    }
+
+    .step-number {
+      font-family: var(--font-heading);
+      font-size: 3rem;
+      line-height: 1;
+      color: rgba(253, 252, 249, 0.35);
+      margin-bottom: 0.75rem;
+    }
+
+    .approach-card p {
+      color: rgba(253, 252, 249, 0.82);
+      margin: 0;
+      line-height: 1.7;
+    }
+
+    /* =========================================================
+       OFFERS
+       ========================================================= */
+
+    .offers {
+      background: var(--bg);
+    }
+
+    .offer-grid {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .offer-card {
+      padding: 1.5rem;
+      background: var(--bg);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      display: grid;
+      gap: 1rem;
+    }
+
+    .offer-card.featured {
+      background: var(--sage);
+      border-color: rgba(47, 64, 57, 0.28);
+    }
+
+    .offer-badge {
+      display: inline-flex;
+      width: fit-content;
+      padding: 0.38rem 0.7rem;
+      background: rgba(47, 64, 57, 0.09);
+      color: var(--green);
+      border: 1px solid rgba(47, 64, 57, 0.12);
+      border-radius: 999px;
+      font-size: 0.72rem;
+      line-height: 1.2;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .offer-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 0.55rem;
+    }
+
+    .offer-list li {
+      color: var(--ink-soft);
+      display: flex;
+      gap: 0.6rem;
+    }
+
+    .offer-list li::before {
+      content: "✓";
+      color: var(--green);
+      font-weight: 800;
+      flex: 0 0 auto;
+    }
+
+    .small-note {
+      margin: 0;
+      color: var(--stone);
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    .trust-note {
+      margin-top: 1.5rem;
+      padding: 1rem 1rem 1rem 1.2rem;
+      border-left: 2px solid var(--green);
+      background: var(--sand);
+      color: var(--ink-soft);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      max-width: 820px;
+    }
+
+    /* =========================================================
+       ABOUT
+       ========================================================= */
+
+    .about {
+      background: var(--sand);
+    }
+
+    .about-layout {
+      display: grid;
+      gap: 2rem;
+      align-items: start;
+    }
+
+    .photo-card {
+      background: var(--bg);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      padding: 0.75rem;
+    }
+
+    .photo-placeholder {
+      aspect-ratio: 4 / 5;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      padding: 1.5rem;
+      background:
+        linear-gradient(135deg, rgba(47, 64, 57, 0.12), transparent 55%),
+        var(--sage);
+      color: var(--stone);
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      border-radius: var(--radius-sm);
+    }
+
+    .photo-note {
+      margin: 0.75rem 0 0;
+      color: var(--stone);
+      text-align: center;
+      font-size: 0.82rem;
+    }
+
+    .proof-grid {
+      display: grid;
+      gap: 0.75rem;
+      margin-top: 1.7rem;
+    }
+
+    .proof-item {
+      padding: 0.9rem 1rem;
+      background: rgba(253, 252, 249, 0.78);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-sm);
+      color: var(--ink-soft);
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    /* =========================================================
+       WHY I DO THIS
+       ========================================================= */
+
+    .why {
+      background: var(--bg);
+    }
+
+    .why-card {
+      padding: 1.5rem;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--line);
+      background: var(--sage);
+      max-width: 850px;
+    }
+
+    .why-card p {
+      color: var(--ink-soft);
+      line-height: 1.75;
+    }
+
+    .why-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* =========================================================
+       HOW IT WORKS
+       ========================================================= */
+
+    .how {
+      background: var(--sand);
+    }
+
+    .timeline {
+      display: grid;
+      gap: 1rem;
+      counter-reset: steps;
+    }
+
+    .timeline-item {
+      counter-increment: steps;
+      display: grid;
+      gap: 0.6rem;
+      padding: 1.25rem;
+      background: rgba(253, 252, 249, 0.78);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+    }
+
+    .timeline-item::before {
+      content: "0" counter(steps);
+      font-family: var(--font-heading);
+      color: var(--green);
+      font-size: 2rem;
+      line-height: 1;
+    }
+
+    .timeline-item p {
+      margin: 0;
+      color: var(--ink-soft);
+      line-height: 1.7;
+    }
+
+    /* =========================================================
+       FAQ
+       ========================================================= */
+
+    .faq {
+      background: var(--bg);
+    }
+
+    .faq-list {
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    details {
+      background: var(--bg);
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      padding: 1rem 1.1rem;
+    }
+
+    summary {
+      cursor: pointer;
+      color: var(--ink);
+      font-weight: 700;
+      line-height: 1.4;
+      list-style-position: outside;
+    }
+
+    details p {
+      margin: 0.85rem 0 0;
+      color: var(--ink-soft);
+      line-height: 1.7;
+    }
+
+    /* =========================================================
+       FINAL CTA AND FOOTER
+       ========================================================= */
+
+    .final-cta {
+      background: var(--green);
+      color: var(--bg);
+      text-align: center;
+    }
+
+    .final-cta h2 {
+      color: var(--bg);
+    }
+
+    .final-cta .lead {
+      margin-left: auto;
+      margin-right: auto;
+      color: rgba(253, 252, 249, 0.82);
+    }
+
+    .final-cta .button-row {
+      justify-content: center;
+    }
+
+    .final-cta .microcopy {
+      margin-left: auto;
+      margin-right: auto;
+      color: rgba(253, 252, 249, 0.72);
+    }
+
+    .footer {
+      padding: 2rem 1.25rem;
+      background: var(--green-deep);
+      color: rgba(253, 252, 249, 0.72);
+    }
+
+    .footer-inner {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      display: grid;
+      gap: 1rem;
+    }
+
+    .footer p {
+      margin: 0;
+      font-size: 0.9rem;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer a {
+      color: rgba(253, 252, 249, 0.82);
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    .footer a:hover {
+      color: var(--bg);
+      text-decoration: underline;
+    }
+
+    /* =========================================================
+       RESPONSIVE DESIGN
+       ========================================================= */
+
+    @media (min-width: 720px) {
+      .section {
+        padding: 5.75rem 2rem;
+      }
+
+      .hero {
+        padding: 6.5rem 2rem 5.75rem;
+      }
+
+      .check-grid,
+      .proof-grid,
+      .principle-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .offer-grid {
+        grid-template-columns: 0.85fr 1.15fr;
+      }
+
+      .timeline {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr auto;
+        align-items: center;
+      }
+    }
+
+    @media (min-width: 900px) {
+      .nav {
+        padding: 1rem 2rem;
+      }
+
+      .nav-links {
+        display: flex;
+      }
+
+      .hero-grid {
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 4rem;
+      }
+
+      .problem-layout,
+      .about-layout {
+        grid-template-columns: 0.92fr 1.08fr;
+        gap: 4rem;
+      }
+
+      .approach-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+
+      .timeline {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
+    }
+
+    @media (min-width: 1040px) {
+      .section {
+        padding: 6.5rem 2rem;
+      }
+
+      .hero {
+        padding: 7rem 2rem 6.5rem;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .nav {
+        gap: 0.7rem;
+      }
+
+      .brand {
+        font-size: 1.05rem;
+      }
+
+      .nav-cta {
+        padding: 0.65rem 0.75rem;
+      }
+
+      .button {
+        width: 100%;
+      }
+
+      .button-row {
+        align-items: stretch;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      *,
+      *::before,
+      *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <div class="site-wrapper">
+
+    <!-- =========================================================
+         HEADER
+         Replace [INSERT BOOKING LINK HERE] with your Calendly link.
+         ========================================================= -->
+    <header class="site-header">
+      <nav class="nav" aria-label="Main navigation">
+        <a class="brand" href="#top">Abdalla Youssef</a>
+
+        <div class="nav-links" aria-label="Page sections">
+          <a href="#who">Who It’s For</a>
+          <a href="#approach">Approach</a>
+          <a href="#offers">Offers</a>
+          <a href="#about">About</a>
+          <a href="#faq">FAQ</a>
+        </div>
+
+        <a class="button button-primary nav-cta" href="[INSERT BOOKING LINK HERE]">Book a Call</a>
+      </nav>
+    </header>
+
+    <main id="main">
+
+      <!-- =========================================================
+           HERO
+           ========================================================= -->
+      <section class="hero" id="top">
+        <div class="container hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Coaching for your next chapter</p>
+
+            <h1 class="display-heading">
+              Build the <strong>structure, self-trust, and consistency</strong> your next chapter requires.
+            </h1>
+
+            <p class="lead">
+              Coaching for capable people, especially those approaching their late 20s and early 30s, who feel stuck, inconsistent, overwhelmed, or unclear about what comes next.
+            </p>
+
+            <p class="lead hero-support">
+              I help you understand the patterns holding you back, create structure from the mess, and take practical steps you can actually follow through on.
+            </p>
+
+            <div class="credentials-strip" aria-label="Experience and credentials">
+              <span class="credential-pill">Certified Life Coach</span>
+              <span class="credential-pill">Personal Trainer</span>
+              <span class="credential-pill">Performance Coach</span>
+              <span class="credential-pill">8+ Years Operations Management</span>
+            </div>
+
+            <div class="button-row">
+              <a class="button button-primary" href="[INSERT BOOKING LINK HERE]">Book a Discovery Call</a>
+              <a class="button button-secondary" href="#who">See if this is for you</a>
+            </div>
+
+            <p class="microcopy">
+              Start with one conversation. We will look at where you are, what feels stuck, and whether coaching is the right support.
+            </p>
+          </div>
+
+          <aside class="hero-card" aria-label="Coaching focus">
+            <div class="hero-card-inner">
+              <p class="hero-card-title">The work</p>
+              <p class="hero-card-copy">
+                Self-awareness becomes useful when it turns into decisions, routines, and action you can repeat.
+              </p>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <!-- =========================================================
+           WHO IT'S FOR
+           ========================================================= -->
+      <section class="section who" id="who">
+        <div class="container">
+          <div class="section-header">
+            <p class="section-label">Who it’s for</p>
+            <h2 class="section-heading">For people who look capable, but feel stuck inside.</h2>
+            <p class="lead">
+              This may be for you if the outside looks mostly fine, but internally you know something needs to shift.
+            </p>
+          </div>
+
+          <div class="check-grid">
+            <div class="check-item">
+              <span class="check-icon" aria-hidden="true">✓</span>
+              <span>You feel behind, even though you know you are not starting from zero.</span>
+            </div>
+
+            <div class="check-item">
+              <span class="check-icon" aria-hidden="true">✓</span>
+              <span>You are approaching your late 20s or early 30s and feel like the next chapter requires more from you.</span>
+            </div>
+
+            <div class="check-item">
+              <span class="check-icon" aria-hidden="true">✓</span>
+              <span>You know you are capable, but your habits, confidence, or consistency do not fully reflect that.</span>
+            </div>
+
+            <div class="check-item">
+              <span class="check-icon" aria-hidden="true">✓</span>
+              <span>You keep thinking about your future, but struggle to choose the next clear step.</span>
+            </div>
+
+            <div class="check-item">
+              <span class="check-icon" aria-hidden="true">✓</span>
+              <span>You want more discipline, but not the kind that comes from shame or self-criticism.</span>
+            </div>
+
+            <div class="check-item">
+              <span class="check-icon" aria-hidden="true">✓</span>
+              <span>You want to understand your patterns instead of forcing another routine that does not last.</span>
+            </div>
+          </div>
+
+          <p class="who-close accent-line">
+            This is not for someone who needs a motivational speech. It is for someone who wants a clearer mirror, a better structure, and support turning intention into behavior.
+          </p>
+        </div>
+      </section>
+
+      <!-- =========================================================
+           THE PROBLEM
+           ========================================================= -->
+      <section class="section problem" id="problem">
+        <div class="container problem-layout">
+          <div>
+            <p class="section-label">The problem</p>
+            <h2 class="section-heading">You are probably not lazy. You may be missing structure, clarity, and the right kind of support.</h2>
+            <p class="lead">
+              A lot of people blame themselves when they feel stuck. They think they need more discipline, more motivation, or more willpower.
+            </p>
+            <p class="body-copy" style="margin-top: 1rem;">
+              Sometimes that is not the real issue. Sometimes your life has changed, but your structure has not.
+            </p>
+          </div>
+
+          <div class="problem-card">
+            <ul class="problem-list">
+              <li>Your goals are unclear.</li>
+              <li>Your routines do not match your current season of life.</li>
+              <li>Your confidence has taken hits.</li>
+              <li>Your standards are high, but your plan is vague.</li>
+              <li>You know something needs to change, but you are carrying too much of it alone.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="container-narrow" style="margin-top: 2rem;">
+          <p class="body-copy accent-line">
+            Coaching helps you slow down, see the pattern, and build a way forward that fits your actual life.
+          </p>
+
+          <div class="button-row">
+            <a class="button button-primary" href="[INSERT BOOKING LINK HERE]">Book a Discovery Call</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+           WHAT WE WORK ON
+           ========================================================= -->
+      <section class="section work-on" id="work-on">
+        <div class="container">
+          <p class="section-label">What we can work on</p>
+          <h2 class="section-heading">The focus is practical, personal, and connected to your real life.</h2>
+          <p class="lead">
+            Coaching is not about talking in circles. We use reflection to create decisions, routines, and action.
+          </p>
+
+          <div class="topic-list" aria-label="Common coaching areas">
+            <span class="topic-pill">Life direction</span>
+            <span class="topic-pill">Confidence</span>
+            <span class="topic-pill">Self-trust</span>
+            <span class="topic-pill">Fitness consistency</span>
+            <span class="topic-pill">Habits and routines</span>
+            <span class="topic-pill">Discipline without shame</span>
+            <span class="topic-pill">Career uncertainty</span>
+            <span class="topic-pill">Emotional clarity</span>
+            <span class="topic-pill">Follow-through</span>
+            <span class="topic-pill">A season of transition</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+           WHY THIS APPROACH WORKS
+           ========================================================= -->
+      <section class="section why-works" id="why-works">
+        <div class="container">
+          <div class="section-header">
+            <p class="section-label">Why this approach works</p>
+            <h2 class="section-heading">Insight alone is not enough. Pressure alone is not enough.</h2>
+            <p class="lead">
+              The work is strongest when self-awareness, structure, and accountability support each other.
+            </p>
+          </div>
+
+          <div class="principle-grid">
+            <article class="principle-card">
+              <h3 class="card-heading">Insight without structure becomes overthinking.</h3>
+              <p>You can understand yourself deeply and still feel stuck if the insight does not become a plan you can use.</p>
+            </article>
+
+            <article class="principle-card">
+              <h3 class="card-heading">Structure without self-awareness becomes pressure.</h3>
+              <p>Routines and goals work better when they match your patterns, values, energy, and real life.</p>
+            </article>
+
+            <article class="principle-card">
+              <h3 class="card-heading">Accountability without compassion becomes shame.</h3>
+              <p>The goal is not to beat yourself into consistency. The goal is to build support that helps you return, adjust, and keep going.</p>
+            </article>
+
+            <article class="principle-card highlight">
+              <h3 class="card-heading">Coaching brings the pieces together.</h3>
+              <p>We work on the person, the pattern, and the structure, so change becomes clearer, more practical, and easier to repeat.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+           MY APPROACH
+           ========================================================= -->
+      <section class="section approach" id="approach">
+        <div class="container">
+          <div class="section-header">
+            <p class="section-label">My approach</p>
+            <h2 class="section-heading">Understand. Structure. Move.</h2>
+            <p class="lead">
+              Most people try to force action before they understand the pattern. That is why the same problem often comes back.
+            </p>
+          </div>
+
+          <div class="approach-grid">
+            <article class="approach-card">
+              <div class="step-number">01</div>
+              <h3 class="card-heading">Understand</h3>
+              <p>
+                We look at what is actually happening. What keeps repeating? Where do you lose momentum? What are you avoiding? Where are your actions not matching what you say matters?
+              </p>
+            </article>
+
+            <article class="approach-card">
+              <div class="step-number">02</div>
+              <h3 class="card-heading">Structure</h3>
+              <p>
+                We turn the mess into something you can work with. Clearer priorities, better routines, stronger boundaries, fitness consistency, decision-making support, or a simpler plan for your week.
+              </p>
+            </article>
+
+            <article class="approach-card">
+              <div class="step-number">03</div>
+              <h3 class="card-heading">Move</h3>
+              <p>
+                We turn clarity into action through small steps, clear commitments, reflection, accountability, and adjustments when life gets messy.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+           COACHING OFFERS
+           ========================================================= -->
+      <section class="section offers" id="offers">
+        <div class="container">
+          <div class="section-header">
+            <p class="section-label">Coaching offers</p>
+            <h2 class="section-heading">Start with one conversation.</h2>
+            <p class="lead">
+              The easiest way to begin is with a discovery call. We will talk about where you are, what feels stuck, and whether coaching together makes sense.
+            </p>
+          </div>
+
+          <div class="offer-grid">
+            <article class="offer-card">
+              <span class="offer-badge">Free | 20 to 30 minutes</span>
+              <h3 class="card-heading">Discovery Call</h3>
+              <p class="body-copy">
+                A focused conversation to understand what you want support with, what is getting in the way, and whether my coaching approach is the right fit.
+              </p>
+              <div class="button-row" style="margin-top: 0.5rem;">
+                <a class="button button-primary" href="[INSERT BOOKING LINK HERE]">Book a Discovery Call</a>
+              </div>
+            </article>
+
+            <article class="offer-card featured">
+              <span class="offer-badge">One-on-one coaching</span>
+              <h3 class="card-heading">Next Chapter Coaching</h3>
+              <p class="body-copy">
+                A focused one-on-one coaching experience for people who want to create clarity, build structure, and move forward with more self-trust and consistency.
+              </p>
+
+              <p class="body-copy">
+                Each session helps you clarify what is happening, identify the next priority, and leave with practical actions to test before the next session.
+              </p>
+
+              <ul class="offer-list" aria-label="What coaching includes">
+                <li>Private coaching sessions</li>
+                <li>Clear action steps between sessions</li>
+                <li>Reflection and accountability</li>
+                <li>Support around habits, confidence, fitness consistency, direction, and follow-through</li>
+              </ul>
+
+              <p class="small-note">
+                Format, frequency, and investment are discussed on the discovery call.
+              </p>
+
+              <div class="button-row" style="margin-top: 0.5rem;">
+                <a class="button button-primary" href="[INSERT BOOKING LINK HERE]">Book a Discovery Call</a>
+              </div>
+            </article>
+          </div>
+
+          <p class="trust-note">
+            I work with a small number of clients at a time so the coaching stays personal, focused, and useful.
+          </p>
+        </div>
+      </section>
+
+      <!-- =========================================================
+           ABOUT ABDALLA
+           To replace the photo:
+           1. Put your image file in the same folder as this HTML file.
+           2. Replace the .photo-placeholder div with:
+              <img src="your-photo.jpg" alt="Abdalla Youssef">
+           ========================================================= -->
+      <section class="section about" id="about">
+        <div class="container about-layout">
+          <div class="photo-card">
+            <div class="photo-placeholder">
+              Add your photo here
+            </div>
+            <p class="photo-note">Replace with a real photo before publishing.</p>
+          </div>
+
+          <div>
+            <p class="section-label">About Abdalla</p>
+            <h2 class="section-heading">I bring together coaching, fitness, people development, and operations.</h2>
+
+            <div class="stack">
+              <p class="body-copy">
+                I am Abdalla Youssef, a certified life coach, personal trainer, performance coach, and group coaching practitioner with 8+ years of operations management experience supporting teams, improving systems, and helping people execute more consistently.
+              </p>
+
+              <p class="body-copy">
+                Coaching helps you understand yourself. Fitness teaches consistency, confidence, and discipline. Operations teaches structure, execution, and how to make things work in real life.
+              </p>
+
+              <p class="body-copy">
+                That combination matters. Some coaches are strong at reflection, but weak on structure. Some are strong at accountability, but miss the emotional layer. Some understand systems, but forget the person inside the system.
+              </p>
+
+              <p class="body-copy">
+                My work sits in the middle. I help people feel seen, understand their patterns, create structure from chaos, and take practical action they can repeat.
+              </p>
+            </div>
+
+            <div class="proof-grid" aria-label="Credibility highlights">
+              <div class="proof-item">Certified life coach</div>
+              <div class="proof-item">Certified personal trainer</div>
+              <div class="proof-item">Performance coach</div>
+              <div class="proof-item">Group coaching practitioner</div>
+              <div class="proof-item">8+ years operations management</div>
+              <div class="proof-item">Health, wellness, people development, and execution</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+           WHY I DO THIS
+           ========================================================= -->
+      <section class="section why" id="why">
+        <div class="container">
+          <div class="section-header">
+            <p class="section-label">Why I do this</p>
+            <h2 class="section-heading">I care about the moment someone starts to feel capable again.</h2>
+          </div>
+
+          <div class="why-card">
+            <p>
+              Not because someone hyped them up. Because they finally understand what has been getting in the way. Because they have a structure that fits their life. Because they are taking small actions that prove they can trust themselves again.
+            </p>
+
+            <p>
+              A lot of people are not broken. They are overwhelmed, unclear, unsupported, or stuck in patterns they have not fully understood yet.
+            </p>
+
+            <p>
+              I care about the space between knowing something needs to change and knowing what to do next. My work is about helping people move through that space with more clarity, structure, and self-respect.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+           HOW IT WORKS
+           ========================================================= -->
+      <section class="section how" id="how">
+        <div class="container">
+          <div class="section-header">
+            <p class="section-label">How it works</p>
+            <h2 class="section-heading">What happens after you book.</h2>
+            <p class="lead">
+              The process is simple, clear, and low-friction. You do not need to have everything perfectly explained before you start.
+            </p>
+          </div>
+
+          <div class="timeline">
+            <article class="timeline-item">
+              <h3 class="card-heading">Book a discovery call</h3>
+              <p>You choose a time that works for you and answer a few simple questions before the call.</p>
+            </article>
+
+            <article class="timeline-item">
+              <h3 class="card-heading">We talk through what feels stuck</h3>
+              <p>We look at where you are, what you want support with, and what has been getting in the way.</p>
+            </article>
+
+            <article class="timeline-item">
+              <h3 class="card-heading">We decide if coaching fits</h3>
+              <p>If it makes sense, we talk through what working together could look like. If it does not, you still leave with a clearer next step.</p>
+            </article>
+
+            <article class="timeline-item">
+              <h3 class="card-heading">We begin the work</h3>
+              <p>Sessions focus on reflection, structure, action, and accountability. The work is practical, personal, and built around your real life.</p>
+            </article>
+          </div>
+
+          <div class="button-row">
+            <a class="button button-primary" href="[INSERT BOOKING LINK HERE]">Book a Discovery Call</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+           FAQ
+           Uses native details/summary for accessible accordion behavior.
+           ========================================================= -->
+      <section class="section faq" id="faq">
+        <div class="container">
+          <div class="section-header">
+            <p class="section-label">FAQ</p>
+            <h2 class="section-heading">Questions you may have before booking.</h2>
+          </div>
+
+          <div class="faq-list">
+            <details>
+              <summary>Is this therapy?</summary>
+              <p>
+                No. Coaching is not therapy, crisis support, medical care, or a replacement for mental health treatment. Coaching can support clarity, habits, accountability, fitness consistency, emotional reflection, decision-making, and personal growth. If you need clinical support, therapy or medical care may be the more appropriate place to start.
+              </p>
+            </details>
+
+            <details>
+              <summary>Do I need to know exactly what I want before booking?</summary>
+              <p>
+                No. You do not need a perfect goal. You just need a sense that something feels stuck, unclear, or ready to change. The discovery call helps clarify what kind of support makes sense.
+              </p>
+            </details>
+
+            <details>
+              <summary>What kinds of things can we work on?</summary>
+              <p>
+                Common areas include confidence, habits, routines, discipline, fitness consistency, emotional clarity, life direction, career uncertainty, self-trust, and follow-through.
+              </p>
+            </details>
+
+            <details>
+              <summary>Will you tell me what to do?</summary>
+              <p>
+                Not in a simplistic way. I will ask strong questions, reflect patterns, challenge you when needed, and help you build structure. But the goal is not dependency. The goal is helping you make clearer decisions and follow through with more confidence.
+              </p>
+            </details>
+
+            <details>
+              <summary>What makes your approach different?</summary>
+              <p>
+                My work combines coaching, fitness, performance, people development, and operations. That means I care about insight, but I also care about execution. We do not just talk about what you want. We look at what helps you actually live differently.
+              </p>
+            </details>
+
+            <details>
+              <summary>Is this only for people in their late 20s and early 30s?</summary>
+              <p>
+                That is the season I speak to most directly because many people in that stage are navigating identity, direction, confidence, discipline, and the pressure of becoming more intentional with their life. If the message resonates and you are in a different season, the discovery call is still the best place to see if it fits.
+              </p>
+            </details>
+
+            <details>
+              <summary>What if I am not ready?</summary>
+              <p>
+                You do not need to feel fully ready. You do need to be willing to reflect, take responsibility, and try small actions between sessions.
+              </p>
+            </details>
+
+            <details>
+              <summary>How do I start?</summary>
+              <p>
+                Book a discovery call. We will talk through where you are, what you need, and whether coaching together makes sense.
+              </p>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================================================
+           FINAL CTA
+           ========================================================= -->
+      <section class="section final-cta" id="book">
+        <div class="container-narrow">
+          <p class="eyebrow" style="color: rgba(253, 252, 249, 0.78);">Start here</p>
+
+          <h2 class="section-heading">You do not need to have the whole thing figured out.</h2>
+
+          <p class="lead">
+            Start with one conversation. We will look at where you are, what feels stuck, and whether this is the right support for your next chapter.
+          </p>
+
+          <div class="button-row">
+            <a class="button button-light" href="[INSERT BOOKING LINK HERE]">Book a Discovery Call</a>
+          </div>
+
+          <p class="microcopy">
+            A focused first step. No need to have everything perfectly explained before you book.
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <!-- =========================================================
+         FOOTER
+         ========================================================= -->
+    <footer class="footer">
+      <div class="footer-inner">
+        <p>© 2026 Abdalla Youssef Coaching</p>
+
+        <div class="footer-links" aria-label="Footer links">
+          <a href="#top">Back to top</a>
+          <a href="[INSERT BOOKING LINK HERE]">Book a Discovery Call</a>
+        </div>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
