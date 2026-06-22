@@ -63,8 +63,8 @@
       background: var(--bg);
       color: var(--text);
       font-family: var(--font-body);
-      font-size: 17px;
-      line-height: 1.68;
+      font-size: 16px;
+      line-height: 1.66;
       text-rendering: optimizeLegibility;
       -webkit-font-smoothing: antialiased;
     }
@@ -105,7 +105,7 @@
     }
 
     .section {
-      padding: 5.75rem 1.25rem;
+      padding: 4.8rem 1.25rem;
       border-top: 1px solid rgba(2, 26, 66, 0.06);
     }
 
@@ -164,43 +164,43 @@
     }
 
     .display-heading {
-      max-width: 960px;
-      margin-bottom: 1.1rem;
+      max-width: 840px;
+      margin-bottom: 1rem;
       font-family: var(--font-heading);
-      font-size: clamp(3rem, 8.8vw, 5.8rem);
+      font-size: clamp(2.75rem, 7vw, 4.85rem);
       font-weight: 300;
-      line-height: 0.98;
+      line-height: 1.01;
     }
 
     .section-heading {
-      margin-bottom: 1.25rem;
+      margin-bottom: 1rem;
       font-family: var(--font-heading);
-      font-size: clamp(2.2rem, 6vw, 3.6rem);
+      font-size: clamp(2rem, 4.6vw, 3.05rem);
       font-weight: 300;
-      line-height: 1.05;
+      line-height: 1.08;
     }
 
     .card-heading {
       margin-bottom: 0.55rem;
       font-family: var(--font-heading);
-      font-size: 1.48rem;
+      font-size: 1.34rem;
       font-weight: 400;
-      line-height: 1.15;
+      line-height: 1.18;
     }
 
     .lead {
       max-width: 760px;
       margin-bottom: 0;
       color: var(--muted);
-      font-size: 1.05rem;
-      line-height: 1.72;
+      font-size: 1rem;
+      line-height: 1.68;
     }
 
     .body-copy {
       margin-bottom: 0;
       color: var(--muted);
-      font-size: 0.98rem;
-      line-height: 1.72;
+      font-size: 0.96rem;
+      line-height: 1.68;
     }
 
     .stack {
@@ -213,7 +213,7 @@
       flex-wrap: wrap;
       align-items: center;
       gap: 0.85rem;
-      margin-top: 1.9rem;
+      margin-top: 1.55rem;
     }
 
     .button {
@@ -298,11 +298,11 @@
     }
 
     .section-gap {
-      margin-top: 2.4rem;
+      margin-top: 1.9rem;
     }
 
     .card-gap {
-      margin-top: 1.35rem;
+      margin-top: 1.1rem;
     }
 
     .site-header {
@@ -326,12 +326,9 @@
     }
 
     .brand {
-      display: inline-flex;
-      flex-direction: column;
-      align-items: flex-start;
-      width: max-content;
+      display: inline-block;
+      width: fit-content;
       min-width: 0;
-      gap: 0.3rem;
       color: var(--navy);
       font-family: var(--font-heading);
       font-size: 1.42rem;
@@ -346,9 +343,19 @@
 
     .brand .logo-mark {
       display: block;
-      width: 7.7em;
+      position: relative;
+      width: 100%;
       max-width: 100%;
+      aspect-ratio: 300 / 70;
+      margin-top: 0.34rem;
       flex: 0 0 auto;
+    }
+
+    .brand .logo-svg {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
     }
 
     .logo-svg {
@@ -443,7 +450,7 @@
     }
 
     .hero {
-      padding: 6.25rem 1.25rem 5.75rem;
+      padding: 5.2rem 1.25rem 4.85rem;
       background:
         radial-gradient(circle at 90% 14%, rgba(125, 172, 38, 0.13), transparent 28%),
         radial-gradient(circle at 4% 92%, rgba(10, 151, 167, 0.07), transparent 28%),
@@ -453,12 +460,12 @@
     .hero-layout {
       display: grid;
       align-items: center;
-      gap: 3rem;
+      gap: 2.35rem;
     }
 
     .hero-body {
       max-width: 760px;
-      margin-top: 1.35rem;
+      margin-top: 1rem;
       color: var(--text);
     }
 
@@ -583,7 +590,7 @@
     .approach-grid {
       display: grid;
       gap: 1.15rem;
-      margin-top: 2.4rem;
+      margin-top: 1.9rem;
       counter-reset: approach;
     }
 
@@ -816,8 +823,8 @@
 
     .question-list {
       display: grid;
-      gap: 0.9rem;
-      margin-top: 2rem;
+      gap: 0.75rem;
+      margin-top: 1.55rem;
     }
 
     .question-list details {
@@ -853,8 +860,8 @@
     }
 
     .final-cta {
-      padding-top: 6.5rem;
-      padding-bottom: 6.5rem;
+      padding-top: 5.25rem;
+      padding-bottom: 5.25rem;
       background:
         linear-gradient(135deg, rgba(10, 151, 167, 0.16), transparent 34%),
         var(--navy);
@@ -935,16 +942,16 @@
 
     @media (min-width: 720px) {
       .section {
-        padding: 6.75rem 2rem;
+        padding: 5.6rem 2rem;
       }
 
       .hero {
-        padding: 7rem 2rem 6.25rem;
+        padding: 5.9rem 2rem 5.25rem;
       }
 
       .about-layout {
         grid-template-columns: 0.9fr 1.1fr;
-        gap: 3rem;
+        gap: 2.5rem;
       }
 
       .pattern-card {
@@ -1005,11 +1012,11 @@
       }
 
       .section {
-        padding: 4.75rem 1rem;
+        padding: 3.9rem 1rem;
       }
 
       .hero {
-        padding: 4.8rem 1rem 4.5rem;
+        padding: 4rem 1rem 3.8rem;
       }
 
       .brand {
@@ -1036,7 +1043,7 @@
       }
 
       .display-heading {
-        font-size: clamp(2.8rem, 14vw, 4.2rem);
+        font-size: clamp(2.45rem, 12vw, 3.5rem);
       }
 
       .approach-card,
@@ -1100,19 +1107,19 @@
         <a class="brand" href="#top" aria-label="Abdalla Youssef home">
           <span class="brand-name">Abdalla Youssef</span>
           <span class="logo-mark">
-            <svg class="logo-svg" viewBox="0 0 860 180" role="img" aria-label="Abdalla Youssef moving along logo">
-              <circle cx="40" cy="90" r="22" fill="#021A42" />
-              <circle cx="105" cy="90" r="22" fill="#02245A" />
-              <circle cx="170" cy="90" r="22" fill="#032D6A" />
-              <circle cx="235" cy="90" r="22" fill="#014C85" />
-              <circle cx="300" cy="90" r="22" fill="#0876A4" />
-              <circle cx="365" cy="90" r="22" fill="#0A97A7" />
-              <circle cx="430" cy="90" r="22" fill="#14A39A" />
-              <circle cx="495" cy="90" r="22" fill="#3EA55F" />
-              <circle cx="560" cy="90" r="22" fill="#67A926" />
-              <circle cx="625" cy="90" r="22" fill="#7DAC26" />
-              <circle cx="690" cy="90" r="22" fill="#8BBC24" />
-              <path d="M770 45 L825 90 L770 135" fill="none" stroke="#7DAC26" stroke-width="32" stroke-linecap="round" stroke-linejoin="round" />
+            <svg class="logo-svg" viewBox="0 0 300 70" role="img" aria-label="Abdalla Youssef moving along logo">
+              <circle cx="12" cy="35" r="6" fill="#021A42" />
+              <circle cx="36" cy="35" r="6" fill="#02245A" />
+              <circle cx="60" cy="35" r="6" fill="#032D6A" />
+              <circle cx="84" cy="35" r="6" fill="#014C85" />
+              <circle cx="108" cy="35" r="6" fill="#0876A4" />
+              <circle cx="132" cy="35" r="6" fill="#0A97A7" />
+              <circle cx="156" cy="35" r="6" fill="#14A39A" />
+              <circle cx="180" cy="35" r="6" fill="#3EA55F" />
+              <circle cx="204" cy="35" r="6" fill="#67A926" />
+              <circle cx="228" cy="35" r="6" fill="#7DAC26" />
+              <circle cx="252" cy="35" r="6" fill="#8BBC24" />
+              <path d="M276 20 L294 35 L276 50" fill="none" stroke="#7DAC26" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
           </span>
         </a>
@@ -1153,7 +1160,7 @@
 
           <aside class="hero-visual" aria-label="Moving along visual">
             <div class="hero-visual-inner">
-              <svg class="logo-svg" viewBox="0 0 860 180" role="img" aria-label="Moving along logo mark">
+              <svg class="logo-svg" viewBox="18 29 823 122" role="img" aria-label="Moving along logo mark">
                 <circle cx="40" cy="90" r="22" fill="#021A42" />
                 <circle cx="105" cy="90" r="22" fill="#02245A" />
                 <circle cx="170" cy="90" r="22" fill="#032D6A" />
@@ -1304,7 +1311,7 @@
           <div class="photo-card">
             <div class="initials-card" aria-label="Abdalla Youssef">
               <span class="logo-mark" aria-hidden="true">
-                <svg class="logo-svg" viewBox="0 0 860 180">
+                <svg class="logo-svg" viewBox="18 29 823 122">
                   <circle cx="40" cy="90" r="22" fill="#021A42" />
                   <circle cx="105" cy="90" r="22" fill="#02245A" />
                   <circle cx="170" cy="90" r="22" fill="#032D6A" />
@@ -1394,19 +1401,19 @@
           <a class="brand footer-brand" href="#top" aria-label="Abdalla Youssef home">
             <span class="brand-name">Abdalla Youssef</span>
             <span class="logo-mark">
-              <svg class="logo-svg" viewBox="0 0 860 180" role="img" aria-label="Abdalla Youssef moving along logo">
-                <circle cx="40" cy="90" r="22" fill="#021A42" />
-                <circle cx="105" cy="90" r="22" fill="#02245A" />
-                <circle cx="170" cy="90" r="22" fill="#032D6A" />
-                <circle cx="235" cy="90" r="22" fill="#014C85" />
-                <circle cx="300" cy="90" r="22" fill="#0876A4" />
-                <circle cx="365" cy="90" r="22" fill="#0A97A7" />
-                <circle cx="430" cy="90" r="22" fill="#14A39A" />
-                <circle cx="495" cy="90" r="22" fill="#3EA55F" />
-                <circle cx="560" cy="90" r="22" fill="#67A926" />
-                <circle cx="625" cy="90" r="22" fill="#7DAC26" />
-                <circle cx="690" cy="90" r="22" fill="#8BBC24" />
-                <path d="M770 45 L825 90 L770 135" fill="none" stroke="#7DAC26" stroke-width="32" stroke-linecap="round" stroke-linejoin="round" />
+              <svg class="logo-svg" viewBox="0 0 300 70" role="img" aria-label="Abdalla Youssef moving along logo">
+                <circle cx="12" cy="35" r="6" fill="#021A42" />
+                <circle cx="36" cy="35" r="6" fill="#02245A" />
+                <circle cx="60" cy="35" r="6" fill="#032D6A" />
+                <circle cx="84" cy="35" r="6" fill="#014C85" />
+                <circle cx="108" cy="35" r="6" fill="#0876A4" />
+                <circle cx="132" cy="35" r="6" fill="#0A97A7" />
+                <circle cx="156" cy="35" r="6" fill="#14A39A" />
+                <circle cx="180" cy="35" r="6" fill="#3EA55F" />
+                <circle cx="204" cy="35" r="6" fill="#67A926" />
+                <circle cx="228" cy="35" r="6" fill="#7DAC26" />
+                <circle cx="252" cy="35" r="6" fill="#8BBC24" />
+                <path d="M276 20 L294 35 L276 50" fill="none" stroke="#7DAC26" stroke-width="12" stroke-linecap="round" stroke-linejoin="round" />
               </svg>
             </span>
           </a>
